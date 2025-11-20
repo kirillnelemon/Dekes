@@ -1192,59 +1192,57 @@ if i % 1000 == 0:
 # if __name__ == "__main__":
 #     main()
 
-import pygame
-import random
-from py2048_classes import Board
-from pygame.locals import(K_UP, K_DOWN, K_LEFT, K_RIGHT, K_ESCAPE, KEYDOWN, QUIT)
-
-TEXT_DARK = pygame.Color(119,118,100)
-TEXT_LIGHT = pygame.Color(255, 255, 255)
-BACKGROUND = pygame.Color(188, 173, 159)
-EMPTY = pygame.Color(286, 192, 178)
-TITLE_MAX = pygame.Color(18,91, 146)
-CELL_STYLES = {
-0: {"font": TEXT_DARK, "fill": EMPTY},
-1: {"font": TEXT_DARK, "fill": pygame.Color(239,229,218)},
-2: {"font": TEXT_DARK, "fill": pygame.Color(238,225,199)},
-3: {"font": TEXT_DARK, "fill": pygame.Color(242,177,121)},
-4: {"font": TEXT_LIGHT, "fill": pygame.Color(245,149,99)},
-5: {"font": TEXT_LIGHT, "fill": pygame.Color(247,127,96)},
-6: {"font": TEXT_LIGHT, "fill": pygame.Color(246,94,59)},
-7: {"font": TEXT_LIGHT, "fill": pygame.Color(241,219,147)},
-8: {"font": TEXT_LIGHT, "fill": pygame.Color(237,204,97)},
-9: {"font": TEXT_LIGHT, "fill": pygame.Color(235,193,57)},
-10: {"font": TEXT_LIGHT, "fill": pygame.Color(231,181,23)},
-11: {"font": TEXT_DARK, "fill": pygame.Color(192,154,16)},
-12: {"font": TEXT_LIGHT, "fill": pygame.Color(94,218,146)},
-13: {"font": TEXT_LIGHT, "fill": pygame.Color(37,187,100)},
-14: {"font": TEXT_LIGHT, "fill": pygame.Color(35,140,81)},
-15: {"font": TEXT_LIGHT, "fill": pygame.Color(113,180,213)},
-16: {"font": TEXT_LIGHT, "fill": pygame.Color(25,130,205)}
-
-}
-BORDER_WIDTH = 10
-TILE_SIZE = 100
-NUMBER_OF_ROWS = NUMBER_OF_COLUMNS = 4
-SCREEN_WIDTH = SCREEN_HEIGHT = ((NUMBER_OF_ROWS + 1)*BORDER_WIDTH) + (NUMBER_OF_ROWS*TILE_SIZE)
-FONT_SIZE = 24
-
-class Tile(pygame.sprite.Sprite):
-    def __init__(self, row, column, value=None):
-        super(Tile, self). __init__()
-        self.font = pygame.font.Font(pygame.font.get_default_font(), FONT_SIZE)
-        self.x_pos = BORDER_WIDTH + (row * (BORDER_WIDTH + TILE_SIZE))
-        self.y_pos = BORDER_WIDTH + (column * (BORDER_WIDTH + TILE_SIZE))
-        self.surface = pygame.Surface((TILE_SIZE, TILE_SIZE))
-        self.value = value
-        self.update(value)
-    def update(self, value):
-        self.change_fill(value)
-        self.change_text(value)
-        self.value = value
-    def change_fill(self, value):
-    def change_text(self, value):
-        if value:
-            
-
+# import pygame
+# import random
+# from py2048_classes import Board
+# from pygame.locals import(K_UP, K_DOWN, K_LEFT, K_RIGHT, K_ESCAPE, KEYDOWN, QUIT)
+#
+# TEXT_DARK = pygame.Color(119,118,100)
+# TEXT_LIGHT = pygame.Color(255, 255, 255)
+# BACKGROUND = pygame.Color(188, 173, 159)
+# EMPTY = pygame.Color(286, 192, 178)
+# TITLE_MAX = pygame.Color(18,91, 146)
+# CELL_STYLES = {
+# 0: {"font": TEXT_DARK, "fill": EMPTY},
+# 1: {"font": TEXT_DARK, "fill": pygame.Color(239,229,218)},
+# 2: {"font": TEXT_DARK, "fill": pygame.Color(238,225,199)},
+# 3: {"font": TEXT_DARK, "fill": pygame.Color(242,177,121)},
+# 4: {"font": TEXT_LIGHT, "fill": pygame.Color(245,149,99)},
+# 5: {"font": TEXT_LIGHT, "fill": pygame.Color(247,127,96)},
+# 6: {"font": TEXT_LIGHT, "fill": pygame.Color(246,94,59)},
+# 7: {"font": TEXT_LIGHT, "fill": pygame.Color(241,219,147)},
+# 8: {"font": TEXT_LIGHT, "fill": pygame.Color(237,204,97)},
+# 9: {"font": TEXT_LIGHT, "fill": pygame.Color(235,193,57)},
+# 10: {"font": TEXT_LIGHT, "fill": pygame.Color(231,181,23)},
+# 11: {"font": TEXT_DARK, "fill": pygame.Color(192,154,16)},
+# 12: {"font": TEXT_LIGHT, "fill": pygame.Color(94,218,146)},
+# 13: {"font": TEXT_LIGHT, "fill": pygame.Color(37,187,100)},
+# 14: {"font": TEXT_LIGHT, "fill": pygame.Color(35,140,81)},
+# 15: {"font": TEXT_LIGHT, "fill": pygame.Color(113,180,213)},
+# 16: {"font": TEXT_LIGHT, "fill": pygame.Color(25,130,205)}
+#
+# }
+# BORDER_WIDTH = 10
+# TILE_SIZE = 100
+# NUMBER_OF_ROWS = NUMBER_OF_COLUMNS = 4
+# SCREEN_WIDTH = SCREEN_HEIGHT = ((NUMBER_OF_ROWS + 1)*BORDER_WIDTH) + (NUMBER_OF_ROWS*TILE_SIZE)
+# FONT_SIZE = 24
+#
+# class Tile(pygame.sprite.Sprite):
+#     def __init__(self, row, column, value=None):
+#         super(Tile, self). __init__()
+#         self.font = pygame.font.Font(pygame.font.get_default_font(), FONT_SIZE)
+#         self.x_pos = BORDER_WIDTH + (row * (BORDER_WIDTH + TILE_SIZE))
+#         self.y_pos = BORDER_WIDTH + (column * (BORDER_WIDTH + TILE_SIZE))
+#         self.surface = pygame.Surface((TILE_SIZE, TILE_SIZE))
+#         self.value = value
+#         self.update(value)
+#     def update(self, value):
+#         self.change_fill(value)
+#         self.change_text(value)
+#         self.value = value
+#     def change_fill(self, value):
+#     def change_text(self, value):
+#         if value:
 
 
