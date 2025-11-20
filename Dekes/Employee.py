@@ -45,7 +45,6 @@ class NPC:
         return f"{self.name} (HP: {self.hp})"
 
     def attack(self) -> int:
-        """Базовая атака NPC — по умолчанию 0."""
         return 0
 
 
@@ -66,9 +65,27 @@ class Mage(NPC):
         self.mana = mana
 
     def attack(self) -> int:
-        """Атака мага — зависит от уровня маны."""
         if self.mana <= 0:
             return 0
-        self.mana -= 10  # условно маг тратит 10 маны
-        return 25        # фиксированный урон, можно менять
+        self.mana -= 10
+        return 25
+
+
+# ====== ТЕСТОВЫЙ БОЙ ======
+if __name__ == "__main__":
+    warrior = Swordsman("Герой-мечник", 100, 5, 15)
+    mage = Mage("Маг огня", 80, 30)
+
+    print("=== Демонстрация боя ===")
+
+    # атака мечника
+    w_damage = warrior.attack()
+    print(f"{warrior.name} атакует и наносит {w_damage} урона!")
+
+    # атака мага
+    m_damage = mage.attack()
+    print(f"{mage.name} атакует и наносит {m_damage} урона!")
+
+    # показ оставшейся маны мага
+    print(f"Оставшаяся мана мага: {mage.mana}")
 
